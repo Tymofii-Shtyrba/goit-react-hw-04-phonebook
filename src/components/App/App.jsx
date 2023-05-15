@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactsForm from 'components/ContactsForm/ContactsForm';
 import ContactsList from 'components/ContactsList/ContactsList';
 import Filter from 'components/Filter/Filter';
+import { StyledApp } from './App.styled';
 
 export default function App() {
   const [contacts, setContacts] = useState(() => {
@@ -38,9 +39,8 @@ export default function App() {
     [contacts]
   );
 
-  console.log(contacts);
   return (
-    <div>
+    <StyledApp>
       <ContactsForm onSubmit={onSubmit} />
       <Filter value={filter} onChange={onChange} />
       {contacts.length === 0 ? (
@@ -48,6 +48,6 @@ export default function App() {
       ) : (
         <ContactsList contacts={filterContacts(contacts)} onDelete={onDelete} />
       )}
-    </div>
+    </StyledApp>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { StyledLabel, StyledInput } from './Filter.styled';
 export default function Filter({ value, onChange }) {
   return (
-    <label>
+    <StyledLabel>
       Find by Name
-      <input type="text" value={value} onChange={onChange} />
-    </label>
+      <StyledInput type="text" value={value} onChange={onChange} />
+    </StyledLabel>
   );
 }

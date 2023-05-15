@@ -1,11 +1,17 @@
 import React from 'react';
+import {
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+  StyledButton,
+} from './ContactsForm.styled';
 
 export default function ContactsForm({ onSubmit }) {
   return (
-    <form onSubmit={onSubmit}>
-      <label>
+    <StyledForm onSubmit={onSubmit}>
+      <StyledLabel>
         Name:
-        <input
+        <StyledInput
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -13,10 +19,10 @@ export default function ContactsForm({ onSubmit }) {
           required
           autoComplete="false"
         />
-      </label>
-      <label>
+      </StyledLabel>
+      <StyledLabel>
         Number:
-        <input
+        <StyledInput
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -24,8 +30,8 @@ export default function ContactsForm({ onSubmit }) {
           required
           autoComplete="false"
         />
-      </label>
-      <button>Add contact</button>
-    </form>
+      </StyledLabel>
+      <StyledButton>Add contact</StyledButton>
+    </StyledForm>
   );
 }
