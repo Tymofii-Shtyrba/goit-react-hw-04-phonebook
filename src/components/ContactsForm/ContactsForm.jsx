@@ -5,6 +5,7 @@ import {
   StyledLabel,
   StyledButton,
 } from './ContactsForm.styled';
+import PropTypes from 'prop-types';
 
 export default function ContactsForm({ onSubmit }) {
   return (
@@ -35,3 +36,7 @@ export default function ContactsForm({ onSubmit }) {
     </StyledForm>
   );
 }
+
+ContactsForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

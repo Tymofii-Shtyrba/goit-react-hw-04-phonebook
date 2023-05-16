@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyledLabel, StyledInput } from './Filter.styled';
+import PropTypes from 'prop-types';
+
 export default function Filter({ value, onChange }) {
   return (
     <StyledLabel>
@@ -8,3 +10,8 @@ export default function Filter({ value, onChange }) {
     </StyledLabel>
   );
 }
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
